@@ -11,31 +11,43 @@
     <div class="grid grid-cols-3 gap-2">
 <div class="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20">
   <div>
-    <h2 class="text-gray-800 text-2xl font-semibold">Project Name</h2>
+    <h2 class="text-gray-800 text-2xl font-semibold">Project Name</h2><sub>Total Task(s): 2</sub>
     <p class="mt-2 text-gray-600">Description...</p>
   </div>
   <div class="flex justify-end mt-4">
     <a href="#" class="text-xl font-medium text-indigo-500">View Tasks</a>
+  </div>
+
+   <div class="flex justify-start">
+    <a href="#" class="text-xl font-medium text-indigo-500">Add Task</a>
   </div>
 </div>
 
 <div class="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20">
   <div>
-    <h2 class="text-gray-800 text-2xl font-semibold">Project Name</h2>
+    <h2 class="text-gray-800 text-2xl font-semibold">Project Name</h2><sub>Total Task(s): 2</sub>
     <p class="mt-2 text-gray-600">Description...</p>
   </div>
   <div class="flex justify-end mt-4">
     <a href="#" class="text-xl font-medium text-indigo-500">View Tasks</a>
+  </div>
+
+   <div class="flex justify-start">
+    <a href="#" class="text-xl font-medium text-indigo-500">Add Task</a>
   </div>
 </div>
 
 <div class="max-w-md py-4 px-8 bg-white shadow-lg rounded-lg my-20">
   <div>
-    <h2 class="text-gray-800 text-2xl font-semibold">Project Name</h2>
+    <h2 class="text-gray-800 text-2xl font-semibold">Project Name</h2><sub>Total Task(s): 2</sub>
     <p class="mt-2 text-gray-600">Description...</p>
   </div>
   <div class="flex justify-end mt-4">
     <a href="#" class="text-xl font-medium text-indigo-500">View Tasks</a>
+  </div>
+
+   <div class="flex justify-start">
+    <a href="#" class="text-xl font-medium text-indigo-500">Add Task</a>
   </div>
 </div>
 

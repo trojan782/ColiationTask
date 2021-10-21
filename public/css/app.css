@@ -1362,6 +1362,9 @@ select {
 .items-center {
 	align-items: center;
 }
+.justify-start {
+	justify-content: flex-start;
+}
 .justify-end {
 	justify-content: flex-end;
 }
@@ -1379,6 +1382,9 @@ select {
 }
 .gap-1 {
 	gap: 0.25rem;
+}
+.gap-2 {
+	gap: 0.5rem;
 }
 .space-x-8 > :not([hidden]) ~ :not([hidden]) {
 	--tw-space-x-reverse: 0;
