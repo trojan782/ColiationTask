@@ -16,7 +16,7 @@
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",
-        "postcss": "^7",
+        "postcss": "^8.3.1",
         "postcss-import": "^14.0.1",
         "tailwindcss": "npm:@tailwindcss/postcss7-compat"
     },
