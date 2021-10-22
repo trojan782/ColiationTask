@@ -14,7 +14,7 @@ class task extends Model
     ];
 
         /**
-         * Get the user that owns the task
+         * Get the project that owns the task
          *
          * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
          */
