@@ -19,7 +19,6 @@ class CreateProjectsTable extends Migration
             $table->string('title');
             $table->string('description');
             $table->string('task');
-            $table->foreign('task_id')->references('id')->on('tasks')->onDelete('cascade');
         });
     }
 
