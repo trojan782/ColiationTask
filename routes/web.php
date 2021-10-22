@@ -24,3 +24,11 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/form', function () {
     return view('newProject');
 })->name('form');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/addtask', function () {
+    return view('newTask');
+})->name('newtask');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/project/tasks', function () {
+    return view('viewTasks');
+})->name('viewtasks');
