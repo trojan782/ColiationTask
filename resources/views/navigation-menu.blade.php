@@ -16,8 +16,12 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
 
-                      <x-jet-nav-link href="{{ route('form') }}" :active="request()->routeIs('form')">
+                      <x-jet-nav-link href="{{ route('add') }}" :active="request()->routeIs('add')">
                         {{ __('Create Project') }}
+                    </x-jet-nav-link>
+
+                     <x-jet-nav-link href="{{ route('newtask') }}" :active="request()->routeIs('newtask')">
+                        {{ __('Create Task') }}
                     </x-jet-nav-link>
                 </div>
             </div>
