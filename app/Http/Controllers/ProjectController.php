@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,48 +12,31 @@ class ProjectController extends Controller
 {
     public function index()
     {
-        // $projects = Auth::user()->projects();
-        $projects = Project::all();
+        //To get all the projects of the user
+        $projects = Project::where('user_id', Auth::id())->get();
 
-        return view('/dashboard', compact('projects'));
-
-        // return view('dashboard', ['projects' => $projects]);
+        return view('dashboard', ['projects' => $projects]);
     }
-
-
 
     public function add() {
         return view('newProject');
     }
 
     public function create(ProjectRequest $request) {
-        // $validator = $request->all();
         $project = new Project();
         $project->title = $request->title;
         $project->user_id = Auth::id();
         $project->description = $request->description;
         $project->task = $request->task;
         $project->save();
-        // return redirect('/dashboard');
         return redirect()->back();
     }
 
-
+    public function tasks(Request $request, Project $project) {
+        $tasks = Task::where('projectId', $project->id)->get();
+        // $tasks = Task::all();
+        return view('viewTasks', ['tasks' => $tasks]);
+    }
 }
 
-// public function update(Request $request, Task $task)
-//     {
-//         //to check if the delete button is clicked and to delete the task
-//         if(isset($_POST['delete'])) {
-//             $task->delete();
-//             return redirect('/dashboard');
-//             //to update the task
-//         } else {
-//             $this->validate($request, [
-//                 'description' => 'required'
-//             ]);
-//             $task->description = $request->description;
-//             $task->save();
-//             return redirect('/dashboard');
-//         }
-//     }
+

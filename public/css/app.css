@@ -1102,6 +1102,9 @@ select {
 .col-span-6 {
 	grid-column: span 6 / span 6;
 }
+.m-1 {
+	margin: 0.25rem;
+}
 .mx-auto {
 	margin-left: auto;
 	margin-right: auto;
@@ -1278,6 +1281,9 @@ select {
 .w-64 {
 	width: 16rem;
 }
+.w-52 {
+	width: 13rem;
+}
 .min-w-0 {
 	min-width: 0px;
 }
@@ -1337,9 +1343,6 @@ select {
 }
 .cursor-pointer {
 	cursor: pointer;
-}
-.resize-none {
-	resize: none;
 }
 .list-inside {
 	list-style-position: inside;
@@ -1541,6 +1544,10 @@ select {
 	--tw-bg-opacity: 1;
 	background-color: rgba(229, 231, 235, var(--tw-bg-opacity));
 }
+.bg-purple-600 {
+	--tw-bg-opacity: 1;
+	background-color: rgba(124, 58, 237, var(--tw-bg-opacity));
+}
 .bg-blue-600 {
 	--tw-bg-opacity: 1;
 	background-color: rgba(37, 99, 235, var(--tw-bg-opacity));
@@ -1548,10 +1555,6 @@ select {
 .bg-blue-500 {
 	--tw-bg-opacity: 1;
 	background-color: rgba(59, 130, 246, var(--tw-bg-opacity));
-}
-.bg-red-500 {
-	--tw-bg-opacity: 1;
-	background-color: rgba(239, 68, 68, var(--tw-bg-opacity));
 }
 .bg-opacity-25 {
 	--tw-bg-opacity: 0.25;
@@ -1737,9 +1740,6 @@ select {
 .leading-4 {
 	line-height: 1rem;
 }
-.leading-normal {
-	line-height: 1.5;
-}
 .tracking-widest {
 	letter-spacing: 0.1em;
 }
@@ -1824,18 +1824,6 @@ select {
 .antialiased {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-.placeholder-gray-700::-moz-placeholder {
-	--tw-placeholder-opacity: 1;
-	color: rgba(55, 65, 81, var(--tw-placeholder-opacity));
-}
-.placeholder-gray-700:-ms-input-placeholder {
-	--tw-placeholder-opacity: 1;
-	color: rgba(55, 65, 81, var(--tw-placeholder-opacity));
-}
-.placeholder-gray-700::placeholder {
-	--tw-placeholder-opacity: 1;
-	color: rgba(55, 65, 81, var(--tw-placeholder-opacity));
 }
 .opacity-0 {
 	opacity: 0;
@@ -2027,10 +2015,6 @@ select {
 .focus\:bg-gray-50:focus {
 	--tw-bg-opacity: 1;
 	background-color: rgba(249, 250, 251, var(--tw-bg-opacity));
-}
-.focus\:bg-white:focus {
-	--tw-bg-opacity: 1;
-	background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
 }
 .focus\:text-gray-700:focus {
 	--tw-text-opacity: 1;

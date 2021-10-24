@@ -19,11 +19,10 @@ class TaskController extends Controller
         return view('newTask', ['projects' => $projects]);
     }
 
-    public function createTask(TaskRequest $request, Project $project) {
-        $project = $project->id;
+    public function createTask(TaskRequest $request) {
         $task = new Task();
         $task->task = $request->task;
-        $task->projectId = $project->id;
+        $task->projectId = $request->projectId;
         $task->save();
         dd($task);
         return redirect()->back();
