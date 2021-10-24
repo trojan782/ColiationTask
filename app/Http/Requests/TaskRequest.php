@@ -24,7 +24,8 @@ class TaskRequest extends FormRequest
     public function rules()
     {
         return [
-            'task' => 'required|string'
+            'task' => 'required|string',
+            'projectId' => 'required'
         ];
     }
 }
