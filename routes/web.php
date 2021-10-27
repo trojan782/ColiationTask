@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
+use App\Http\Controllers\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,21 +16,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.register');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/form', function () {
-    return view('newProject');
-})->name('form');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/addtask', function () {
-    return view('newTask');
-})->name('newtask');
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/project/tasks', function () {
-    return view('viewTasks');
-})->name('viewtasks');
+    // ================= Projects ==================
+Route::get('/dashboard', [ProjectController::class, 'index'])->name('dashboard');
+Route::post('/project', [ProjectController::class, 'create'])->name('create');
+Route::get('project/tasks/', [ProjectController::Class, 'tasks'])->name('viewtasks');
+Route::get('/add', [ProjectController::class, 'add'])->name('add');
+
+
+// ==================== Tasks =========================
+Route::get('project/addtask', [TaskController::class, 'addTask'])->name('newtask');
+Route::post('project/create', [TaskController::class, 'createTask'])->name('createtask');
+
+
+
+
+
+});
+
