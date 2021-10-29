@@ -26,7 +26,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     // ================= Projects ==================
 Route::get('/dashboard', [ProjectController::class, 'index'])->name('dashboard');
 Route::post('/project', [ProjectController::class, 'create'])->name('create');
-Route::get('project/tasks/', [ProjectController::Class, 'tasks'])->name('viewtasks');
+Route::get('project/tasks/{projectId}', [ProjectController::Class, 'tasks'])->name('viewtasks');
 Route::get('/add', [ProjectController::class, 'add'])->name('add');
 
 

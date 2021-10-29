@@ -34,10 +34,12 @@ class ProjectController extends Controller
         return redirect()->back();
     }
 
-    public function tasks($projectId) {
+    public function tasks( $projectId ) {
         $project = Project::find($projectId);
-        $tasks = Task::where('projectId', $request->id)->get();
-        dd($tasks);
+        $tasks = Task::where('projectId', $projectId)->get();
+        // dd($tasks);
+        // $tasks = Task::where('projectId', $project_id)->get();
+        // dd($tasks);
         return view('viewTasks', ['tasks' => $tasks]);
     }
 }
