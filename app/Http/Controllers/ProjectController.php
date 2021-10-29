@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Task;
 use App\Models\Project;
 use Illuminate\Http\Request;
+use App\Http\Requests\DemoRequest;
+use App\Http\Requests\TaskRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\ProjectRequest;
 
@@ -32,9 +34,10 @@ class ProjectController extends Controller
         return redirect()->back();
     }
 
-    public function tasks(Request $request, Project $project) {
-        $tasks = Task::where('projectId', $project->id)->get();
-        // $tasks = Task::all();
+    public function tasks($projectId) {
+        $project = Project::find($projectId);
+        $tasks = Task::where('projectId', $request->id)->get();
+        dd($tasks);
         return view('viewTasks', ['tasks' => $tasks]);
     }
 }

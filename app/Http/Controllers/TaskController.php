@@ -24,7 +24,6 @@ class TaskController extends Controller
         $task->task = $request->task;
         $task->projectId = $request->projectId;
         $task->save();
-        dd($task);
         return redirect()->back();
     }
 }
