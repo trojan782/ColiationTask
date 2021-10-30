@@ -24,7 +24,17 @@ class TaskController extends Controller
         $task->task = $request->task;
         $task->projectId = $request->projectId;
         $task->save();
-        dd($task);
         return redirect()->back();
     }
+
+    // public function update(TaskRequest $request) {
+
+    // }
+
+    public function destroy($id) {
+        $task = Task::find($id);
+        $task->delete();
+        return redirect()->back();
+    }
+
 }

@@ -10,8 +10,8 @@
         <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-5">
             <div class="flex mb-4 items-center">
                 <p class="w-full text-grey-darkest">{{ $task->task }}</p>
-                <button class="flex-no-shrink p-2 ml-4 mr-2 border-2  bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</button>
-                <button class="flex-no-shrink p-2 ml-2 border-2 rounded text-white bg-red-600 hover:text-white hover:bg-red-800">Delete</button>
+                <a class="flex-no-shrink p-2 ml-4 mr-2 border-2  bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edit</a>
+                <a class="flex-no-shrink p-2 ml-2 border-2 rounded text-white bg-red-600 hover:text-white hover:bg-red-800" href="{{ route('delete', ['id' => $task->id]) }}">Delete</a>
             </div>
         </div>
     </div>
