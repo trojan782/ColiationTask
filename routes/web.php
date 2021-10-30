@@ -33,7 +33,7 @@ Route::get('/add', [ProjectController::class, 'add'])->name('add');
 // ==================== Tasks =========================
 Route::get('project/addtask', [TaskController::class, 'addTask'])->name('newtask');
 Route::post('project/create', [TaskController::class, 'createTask'])->name('createtask');
-
+Route::get('task/delete/{id}', [TaskController::class, 'destroy'])->name('delete');
 
 
 
