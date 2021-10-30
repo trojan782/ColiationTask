@@ -26,4 +26,15 @@ class TaskController extends Controller
         $task->save();
         return redirect()->back();
     }
+
+    // public function update(TaskRequest $request) {
+
+    // }
+
+    public function destroy($id) {
+        $task = Task::find($id);
+        $task->delete();
+        return redirect()->back();
+    }
+
 }
