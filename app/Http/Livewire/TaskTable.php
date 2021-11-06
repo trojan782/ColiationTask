@@ -1,25 +1,35 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Livewire;
 
 use App\Models\Task;
 use App\Models\Project;
-use Illuminate\Http\Request;
+use Livewire\Component;
 use App\Http\Requests\TaskRequest;
-use App\Http\Requests\updateRequest;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
-class TaskController extends Controller
+class TaskTable extends Component
 {
+    public $tasks;
+    public function render()
+    {
+        // $task = $this->tasks;
+        // $task = Task::where('projectId', $project)->orderBy('position')->get();
+        $task = $this->tasks->sortBy('position');
+        // $task = Task::orderBy('position')->get();
+        // $task = DB::table('tasks')->orderBy('position')->get();
+        return view('livewire.task-table', compact('task'));
+    }
 
      public function addTask()
     {
         //To get all the projects of the user
         $projects = Project::where('user_id', Auth::id())->get();
+
         return view('newTask', ['projects' => $projects]);
     }
 
-    //createing a new task
     public function createTask(TaskRequest $request) {
         $task = new Task();
         //to get the maximum position of the tasks and increase it by 1
@@ -31,20 +41,7 @@ class TaskController extends Controller
         return redirect()->back();
     }
 
-    //updating a task
-    public function update(Request $request, $id) {
-        $task = Task::find($id);
-        $task->update($request->all());
-        return redirect()->back();
-    }
 
-    // To render the update page
-    public function edit($id) {
-        $task = Task::find($id);
-        return view('update', ['task' => $task]);
-    }
-
-    //deleting a task
     public function destroy($id) {
         $task = Task::find($id);
         //to automatically update the position after a task is deleted
@@ -53,4 +50,10 @@ class TaskController extends Controller
         return redirect()->back();
     }
 
+    //method for larave sortable to re-order tasks
+    public function updateTaskOrder($tasks) {
+        foreach ($tasks as $task) {
+            Task::find($task['value'])->update(['position' => $task['order']]);
+        }
+    }
 }

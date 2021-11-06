@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class DemoRequest extends FormRequest
+class updateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,10 +23,8 @@ class DemoRequest extends FormRequest
      */
     public function rules()
     {
-       return [
-            'task' => 'required|string',
-            'projectId' => 'required',
-            // 'position' => 'required'
+        return [
+            'task' => 'required|min:2'
         ];
     }
 }

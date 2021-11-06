@@ -11,7 +11,8 @@ class task extends Model
 
     protected $fillable = [
         'projectId',
-        'task'
+        'task',
+        'position'
     ];
 
         /**
@@ -25,3 +26,4 @@ class task extends Model
         }
 
 }
+

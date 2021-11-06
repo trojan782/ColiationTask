@@ -34,9 +34,7 @@ Route::get('/add', [ProjectController::class, 'add'])->name('add');
 Route::get('project/addtask', [TaskController::class, 'addTask'])->name('newtask');
 Route::post('project/create', [TaskController::class, 'createTask'])->name('createtask');
 Route::get('task/delete/{id}', [TaskController::class, 'destroy'])->name('delete');
-
-
-
-
+Route::get('task/edit/{id}', [TaskController::class, 'edit'])->name('edit');
+Route::post('task/update/{id}', [TaskController::class, 'update'])->name('update');
 });
 
