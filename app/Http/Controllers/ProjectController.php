@@ -16,14 +16,15 @@ class ProjectController extends Controller
     {
         //To get all the projects of the user
         $projects = Project::where('user_id', Auth::id())->get();
-
         return view('dashboard', ['projects' => $projects]);
     }
 
+    //to render the add task page
     public function add() {
         return view('newProject');
     }
 
+    //to create a new project
     public function create(ProjectRequest $request) {
         $project = new Project();
         $project->title = $request->title;
@@ -34,13 +35,18 @@ class ProjectController extends Controller
         return redirect()->back();
     }
 
+    //to get all the tasks for a particular project
     public function tasks( $projectId ) {
         $project = Project::find($projectId);
         $tasks = Task::where('projectId', $projectId)->get();
-        // dd($tasks);
-        // $tasks = Task::where('projectId', $project_id)->get();
-        // dd($tasks);
         return view('viewTasks', ['tasks' => $tasks]);
+    }
+
+    //deleting a project
+    public function destroy($id) {
+        $project = Project::find($id);
+        $project->delete($id);
+        return redirect()->back();
     }
 }
 

@@ -10,4 +10,6 @@ class Todo extends Component
     {
         return view('livewire.todo');
     }
+
+    
 }
