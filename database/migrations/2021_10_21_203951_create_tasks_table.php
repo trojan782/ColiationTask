@@ -16,8 +16,14 @@ class CreateTasksTable extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('task');
+            $table->unsignedInteger('projectId');
+            $table->foreign('projectId')->references('id')
+                                     ->on('projects')
+                                     ->onDelete('cascade');
         });
     }
+
 
     /**
      * Reverse the migrations.
