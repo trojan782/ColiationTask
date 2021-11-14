@@ -10,7 +10,7 @@
         <form method="POST" action="{{ route('register') }}">
             {{-- @csrf --}}
             {{ csrf_field() }}
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                {{-- <input type="hidden" name="_token" value="{{ csrf_token() }}"> --}}
             <div>
                 <x-jet-label for="name" value="{{ __('Name') }}" />
                 <x-jet-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
