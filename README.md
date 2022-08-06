@@ -1,5 +1,5 @@
 # Getting started
-
+![Alt](https://repobeats.axiom.co/api/embed/126bf6207391c8f7a4dfe2ae6598f198850f5a6e.svg "Repobeats analytics image")
 ## Installation
 
 Please check the official laravel installation guide for server requirements before you start. [Official Documentation](https://laravel.com/docs/5.4/installation#installation)
