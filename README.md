@@ -38,7 +38,7 @@ You can now access the server at http://localhost:8000
 **TL;DR command list**
 
     git clone https://github.com/trojan782/ColiationTask.git
-    cd lColiationTask
+    cd ColiationTask
     composer install
     cp .env.example .env
     php artisan key:generate
